@@ -26,21 +26,21 @@ test("passes 'name', 'city', and 'color' to <Home> as props", () => {
 
 test("passes 'bio' to <About> as a prop", () => {
   render(<App />);
-  const p = screen.queryByText(user.bio);
+  const p = screen.getByText(user.bio);
   expect(p).toBeInTheDocument();
   expect(p.tagName).toEqual("P");
 });
 
 test("passes 'github' to <Links> as a prop, via <About>", () => {
   render(<App />);
-  const a = screen.queryByText(user.links.github);
+  const a = screen.getByText(user.links.github);
   expect(a).toBeInTheDocument();
   expect(a.tagName).toEqual("A");
 });
 
 test("passes 'linkedin' to <Links> as a prop, via <About>", () => {
   render(<App />);
-  const a = screen.queryByText(user.links.linkedin);
+  const a = screen.getByText(user.links.linkedin);
   expect(a).toBeInTheDocument();
   expect(a.tagName).toEqual("A");
 });
